@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-O objetivo do Cestou é tornar-se uma aplicação de contribuição social por meio de doações de cestas básicas para famílias em situações delicadas.
+O objetivo do Cestou é tornar-se uma aplicação de contribuição social por meio de doações de cestas básicas para famílias em situações de vulnerabilidade social.
 
 ## Como funcionar(á)?
 
@@ -17,4 +17,7 @@ Os doadores podem fazer doações de qualquer quantia financeira
 Assim que obtida a quantia necessária para compra dos itens e entrega de uma cesta básica, o Cestou libera a entrega para a família que esteja na primeira posição da fila.
 
 ### Como a cesta será comprada e entregue?
-Utilizando de recursos de automação bancária, para gestão dos recursos financeiros, e integrações, inicialmente, com aplicativos de entregas do mercado, o Cestou pretende viabilizar sua ideia utilizando recursos existentes do mercado.
+
+Existem duas abordagens que podem ser implementadas para viabilizar a logística do Cestou.
+0 - Utilizando de recursos de automação bancária, para gestão dos recursos financeiros, e integrações, inicialmente, com aplicativos de entregas do mercado, o Cestou pretende viabilizar sua ideia utilizando recursos existentes do mercado.
+0 - Realizando parcerias com empresas que já detém de logística necessária para aquisição e distribuição das cestas básicas, ficando o Cestou responsável pela digitalização e automação do processo de coleta de doações e compra da cesta através do parceiro.
