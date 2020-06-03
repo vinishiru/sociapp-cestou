@@ -19,5 +19,5 @@ Assim que obtida a quantia necessária para compra dos itens e entrega de uma ce
 ### Como a cesta será comprada e entregue?
 
 Existem duas abordagens que podem ser implementadas para viabilizar a logística do Cestou.
-0 - Utilizando de recursos de automação bancária, para gestão dos recursos financeiros, e integrações, inicialmente, com aplicativos de entregas do mercado, o Cestou pretende viabilizar sua ideia utilizando recursos existentes do mercado.
-0 - Realizando parcerias com empresas que já detém de logística necessária para aquisição e distribuição das cestas básicas, ficando o Cestou responsável pela digitalização e automação do processo de coleta de doações e compra da cesta através do parceiro.
+1. Utilizando de recursos de automação bancária, para gestão dos recursos financeiros, e integrações, inicialmente, com aplicativos de entregas do mercado, o Cestou pretende viabilizar sua ideia utilizando recursos existentes do mercado.
+1. Realizando parcerias com empresas que já detém de logística necessária para aquisição e distribuição das cestas básicas, ficando o Cestou responsável pela digitalização e automação do processo de coleta de doações e compra da cesta através do parceiro.
