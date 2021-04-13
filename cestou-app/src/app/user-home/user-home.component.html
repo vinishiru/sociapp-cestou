@@ -1,0 +1,52 @@
+<h1 class="mt-5 mb-5"> Painel de Controle</h1>
+
+<h3 *ngIf="user" class="mb-4">
+    Seja bem-vindo, {{user.name}}.
+</h3>
+<p class="lead">
+    Aqui você encontrará as principais facilidades que o Cestou trouxe para sua doação e administração de instituições.
+</p>
+
+<div class="row row-cols-1 row-cols-md-3">
+    <div class="col mb-4">
+      <div class="card">
+        <img src="assets/images/emptyPlate.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Donatários</h5>
+          <p class="card-text">Cadastre possíveis donatários, ou seja, pessoas ou famílias que estejam em situação de fragilidade social. Cadastrar um donatário é o primeiro passo para ajudar.</p>
+          <a href="#" class="btn btn-primary">Gerenciar Donatários</a>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="assets/images/institution.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Instituições</h5>
+          <p class="card-text">É resposável por uma instituição ou organização? Cadastre sua instituição e tenha capacidade de gerenciar seus donatários, sua carteira de doações, e apadrinhamento de donatários.</p>
+          <a href="#" class="btn btn-primary">Gerenciar Instituições</a>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="assets/images/donators.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Convide Doadores</h5>
+          <p class="card-text">Convide mais pessoas para doar qualquer quantia! A doação pode ser feita diretamente para instituições ou donatários. Seja parte desse movimento e nos ajude a erradicar a fome!</p>
+          <a href="#" class="btn btn-primary">Convidar</a>
+        
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="assets/images/donation.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Doe!</h5>
+          <p class="card-text">Doando você ajuda famílias em situações de fragilidade social a vislumbrarem um futuro com mais esperança! E aí, já cestou hoje?</p>
+          <a href="#" class="btn btn-primary">Doar</a>
+        </div>
+      </div>
+    </div>
+  </div>
