@@ -1,4 +1,12 @@
-<a href="#" [routerLink]="routeUrl" routerLinkActive="active" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-    {{text}}
-    <span *ngIf="badgeCount! > 0" class="badge badge-danger badge-pill">{{badgeCount!}}</span>
-</a>
+<li class="nav-item">
+    <a href="#" [routerLink]="routeUrl" routerLinkActive="active" 
+    class="nav-link link-dark d-flex justify-content-between align-items-center">
+        <div>
+            <span *ngIf="icon" class="mr-3 {{icon}}"></span>
+            {{text}}
+        </div>
+        <span *ngIf="badgeCount! > 0" class="badge badge-danger badge-pill">
+            {{badgeCount}}
+        </span>
+    </a>
+</li>

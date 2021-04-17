@@ -9,6 +9,7 @@ import { UserHomeComponent } from './user-home/user-home.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { SideNavMenuItemComponent } from './side-nav-menu-item/side-nav-menu-item.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PageHeaderComponent } from './page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProfileComponent } from './profile/profile.component';
     UserHomeComponent,
     SideNavComponent,
     SideNavMenuItemComponent,
-    ProfileComponent
+    ProfileComponent,
+    PageHeaderComponent
   ],
   imports: [
     BrowserModule,

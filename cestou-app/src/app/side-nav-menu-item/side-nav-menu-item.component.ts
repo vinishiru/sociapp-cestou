@@ -10,6 +10,7 @@ export class SideNavMenuItemComponent implements OnInit {
   @Input() text?: string;
   @Input() badgeCount?: number;
   @Input() routeUrl?: string;
+  @Input() icon?: string;
 
   constructor() { }
 
