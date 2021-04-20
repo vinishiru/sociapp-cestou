@@ -7,9 +7,7 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="firstName">Nome</label>
-          <input formControlName="firstName" type="text" class="form-control" id="firstName" required>
-          <div class="valid-feedback">Valid Username.</div>
-          <div class="invalid-feedback">Please fill out this field.</div>
+          <input formControlName="firstName" type="text" class="form-control" id="firstName">
         </div>
         <div class="form-group col-md-6">
           <label for="lastName">Sobrenome</label>
@@ -23,8 +21,6 @@
         <small id="emailHelp" class="form-text text-muted">Não compartilharemos seu e-mail com ninguém.</small>
       </div>
 
-
-      <button type="submit" [disabled]="!profileForm.valid" class="btn btn-success">Salvar Dados</button>
       <button type="submit" class="btn btn-success">Salvar Dados</button>
 
     </form>

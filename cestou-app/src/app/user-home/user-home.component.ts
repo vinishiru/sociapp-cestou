@@ -13,7 +13,9 @@ export class UserHomeComponent implements OnInit {
   constructor() {
     
     this.user = {
-      name: "Vinícius"
+      firstName: "Vinícius",
+      lastName: 'Oliveira e Silva',
+      email: ''
     };
 
    }

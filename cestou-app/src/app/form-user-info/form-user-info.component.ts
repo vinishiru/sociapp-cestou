@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { User } from '../interfaces/user';
+import { AppToastService } from '../services/app-toast.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'form-user-info',
@@ -8,23 +11,27 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class FormUserInfoComponent implements OnInit {
 
+  userInfo?: User;
+
   profileForm = new FormGroup({
     firstName: new FormControl('', Validators.required),
-    lastName: new FormControl(''),
-    email: new FormControl('')
+    lastName: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email])
   });
 
-  constructor() {
-
+  constructor(private userService: UserService, private toastService: AppToastService) {
   }
 
   ngOnInit(): void {
+    this.userInfo = this.userService.getUserInfo();
+    this.profileForm.setValue(this.userInfo);
   }
 
   onSubmit(): void {
-    
-    // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    this.userService.saveUserInfo(this.profileForm.value);
+    this.toastService.showStandard('Sucesso', 'Dados salvos com sucesso.');
   }
+
+  get firstName() { return this.profileForm.get('firstName'); }
 
 }
