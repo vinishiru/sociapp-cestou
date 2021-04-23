@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { User } from '../interfaces/user';
-import { AppToastService } from '../services/app-toast.service';
-import { UserService } from '../services/user.service';
+import { User } from '../../../../interfaces/user';
+import { AppToastService } from '../../../../services/app-toast.service';
+import { UserService } from '../../../../services/user.service';
 
 @Component({
   selector: 'form-user-info',

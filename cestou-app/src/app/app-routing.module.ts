@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './profile/profile.component';
-import { UserHomeComponent } from './user-home/user-home.component';
+
+//pages
+import { PageNotFoundComponent } from './shared/pages/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: 'home', component: UserHomeComponent },
-  { path: 'profile', component: ProfileComponent }
+  {
+    path: 'control-panel',
+    loadChildren: () => import('./modules/control-panel/control-panel.module').then(m => m.ControlPanelModule)
+  }
 ];
 
 @NgModule({

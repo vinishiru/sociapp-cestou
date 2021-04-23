@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../interfaces/user';
+import { User } from '../../../../interfaces/user';
 
 @Component({
   selector: 'app-user-home',
@@ -8,17 +8,14 @@ import { User } from '../interfaces/user';
 })
 export class UserHomeComponent implements OnInit {
 
-  user: User
-  
-  constructor() {
-    
-    this.user = {
-      firstName: "Vinícius",
-      lastName: 'Oliveira e Silva',
-      email: ''
-    };
+  user: User = {
+    firstName: "Vinícius",
+    lastName: 'Oliveira e Silva',
+    email: ''
+  };
 
-   }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
