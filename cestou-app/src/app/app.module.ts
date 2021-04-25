@@ -11,12 +11,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //shared components
 import { AppToastComponent } from './shared/components/app-toast/app-toast.component';
 import { PageNotFoundComponent } from './shared/pages/page-not-found/page-not-found.component';
+import { LandingPageComponent } from './pages/landing-page/landing-page.component';
+import { NavBarComponent } from './shared/components/nav-bar/nav-bar.component';
+import { NavBarBottomComponent } from './shared/components/nav-bar-bottom/nav-bar-bottom.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppToastComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LandingPageComponent,
+    NavBarComponent,
+    NavBarBottomComponent
   ],
   imports: [
     BrowserModule,

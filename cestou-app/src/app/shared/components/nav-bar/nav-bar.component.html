@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+
+  <div class="container">
+    <a class="navbar-brand" href="#">{{title}}</a>
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
+          <a class="nav-link" routerLink="/">Início <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" routerLink="/control-panel">Painel de Controle <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-light mr-sm-2 my-2 my-sm-0" type="button">Entrar</button>
+        <button class="btn btn-outline-light my-2 my-sm-0" type="button">Registrar-se</button>
+      </form>
+
+  </div>
+</nav>
