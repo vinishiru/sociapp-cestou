@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
 
   <div class="container">
-    <a class="navbar-brand" href="#">{{title}}</a>
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/cestouLogo.png" width="60" height="60" alt="">
+    </a>
 
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact: true}">
@@ -9,8 +11,21 @@
         </li>
 
         <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" routerLink="/whoweare">Para Doadores <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" routerLink="/whoweare">Para Instituições <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item" [routerLinkActive]="'active'">
+          <a class="nav-link" routerLink="/whoweare">Quem Somos <span class="sr-only">(current)</span></a>
+        </li>
+
+        <li class="nav-item" [routerLinkActive]="'active'">
           <a class="nav-link" routerLink="/control-panel">Painel de Controle <span class="sr-only">(current)</span></a>
         </li>
+
       </ul>
       
       <form class="form-inline my-2 my-lg-0">

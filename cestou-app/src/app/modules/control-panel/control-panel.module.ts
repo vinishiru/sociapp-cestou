@@ -19,6 +19,8 @@ import { ControlPanelComponent } from './control-panel.component';
 
 import { NgBootstrapFormValidationModule, CUSTOM_ERROR_MESSAGES } from 'ng-bootstrap-form-validation';
 import { CUSTOM_ERRORS } from 'src/app/custom-errors';
+import { GranteesComponent } from './pages/grantees/grantees.component';
+import { FormGranteeComponent } from './components/form-grantee/form-grantee.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CUSTOM_ERRORS } from 'src/app/custom-errors';
     PageHeaderComponent,
     FormUserInfoComponent,
     FormAddressComponent,
-    FormPasswordComponent
+    FormPasswordComponent,
+    GranteesComponent,
+    FormGranteeComponent
   ],
   imports: [
     CommonModule,
