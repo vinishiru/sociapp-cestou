@@ -1,6 +1,8 @@
 <div class="row">
   <side-nav class="shadow col-md-2 bg-light"></side-nav>
   <div class="col-md-10">
-    <router-outlet></router-outlet>
+    <!-- <div [@routeAnimation]="prepareRoute(outlet)"> -->
+      <router-outlet #outlet="outlet"></router-outlet>
+    <!-- </div> -->
   </div>
 </div>

@@ -12,14 +12,10 @@ const controlPanelRoutes: Routes = [
   {
     path: '', component: ControlPanelComponent,
     children: [
-      { path: 'home', component: UserHomeComponent },
-      { path: 'profile', component: ProfileComponent },
-      {
-        path: 'grantees', component: GranteesComponent, children:
-          [
-            { path: 'grantee/:id', component: FormGranteeComponent }
-          ]
-      }
+      { path: 'home', component: UserHomeComponent, data: { animation: 'Default' } },
+      { path: 'profile', component: ProfileComponent, data: { animation: 'Default' } },
+      { path: 'grantees', component: GranteesComponent, data: { animation: 'Default' } },
+      { path: 'grantee/:id', component: FormGranteeComponent, data: { animation: 'Default' } }
     ]
   }
 ];
