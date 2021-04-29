@@ -1,12 +1,14 @@
 import { animate, animateChild, group, query, style, transition, trigger, useAnimation } from "@angular/animations";
-import { bounce, fadeInLeft, fadeInRight, fadeOutRight } from "ng-animate";
+import { bounce, fadeInLeft, fadeInRight, fadeInUp, fadeOutLeft, fadeOutRight, fadeOutUp } from "ng-animate";
 
 export const defaultRouteAnimation = [
     trigger('routeAnimation', [
         transition('void => *', useAnimation(fadeInRight, {
             params: { timing: 0.2, a: "15%" }
         })),
-        transition('* => void', useAnimation(fadeInRight))
+        transition('* => void', useAnimation(fadeOutLeft, {
+            params: { timing: 0.2, a: "15%" }
+        }))
     ])
 ];
 

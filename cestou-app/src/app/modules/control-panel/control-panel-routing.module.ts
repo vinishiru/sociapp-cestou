@@ -14,8 +14,12 @@ const controlPanelRoutes: Routes = [
     children: [
       { path: 'home', component: UserHomeComponent, data: { animation: 'Default' } },
       { path: 'profile', component: ProfileComponent, data: { animation: 'Default' } },
-      { path: 'grantees', component: GranteesComponent, data: { animation: 'Default' } },
-      { path: 'grantee/:id', component: FormGranteeComponent, data: { animation: 'Default' } }
+      {
+        path: 'grantees', component: GranteesComponent, data: { animation: 'Default' },
+        children: [
+          { path: 'grantee/:id', component: FormGranteeComponent, data: { animation: 'Default' } }
+        ]
+      }
     ]
   }
 ];

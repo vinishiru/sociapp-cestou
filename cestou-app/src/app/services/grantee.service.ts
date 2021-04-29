@@ -13,9 +13,12 @@ export class GranteeService {
       ownerId: 1,
       creationDate: new Date("2021/04/24"),
       responsiblePerson: {
-        firstName: "João",
+        ssn: 12345678902,
+        firstName: "Joãozin",
         lastName: "Da Silva",
-        email: "joaosilva@gmail.com"
+        email: "joaosilva@gmail.com",
+        birthDate: new Date(1988, 10, 23),
+        phoneNumber: "031999999999"
       }
     }
   ];

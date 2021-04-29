@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'form-address',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form-address.component.css']
 })
 export class FormAddressComponent implements OnInit {
+
+  @Input() title: string = 'Dados de Endereço';
+  @Input() subtitle: string = '';
 
   constructor() { }
 

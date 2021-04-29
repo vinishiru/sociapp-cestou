@@ -1,57 +1,62 @@
 <page-header text="Donatários"></page-header>
 
-<div @routeAnimation class="container">
-  <p class="lead">
-    Aqui é onde você pode cadastrar seus <strong>donatários</strong>.
-  </p>
-  <div class="alert alert-primary">
-    <strong>Donatários</strong> são pessoas e/ou famílias que estão atualmente em situação de vulnerabilidade social, ou
-    seja,
-    com dificuldades para conseguir o próprio sustento e acesso a uma alimentação de qualidade.
-  </div>
+<div class="container">
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Responsável</th>
-        <th scope="col">Quantidade de Membros</th>
-        <th scope="col">Apadrinhado?</th>
-        <th scope="col">Ações</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div *ngIf="!isEditing">
 
-      <tr *ngIf="ownedGrantees.length === 0">
-        <td class="p-0" colspan="5">
-          <div class="m-0 alert alert-warning text-center py-5">
-            <p class="lead">
-              Você ainda não possui nenhum donatário registrado.
-              Cadastre seu primeiro donatário!
-            </p>
-            <button type="button" class="btn btn-lg btn-success">
-              Cadastrar Donatário
+    <p class="lead">
+      Aqui é onde você pode cadastrar seus <strong>donatários</strong>.
+    </p>
+    <div *ngIf="ownedGrantees.length === 0" class="alert alert-primary">
+      <strong>Donatários</strong> são pessoas e/ou famílias que estão atualmente em situação de vulnerabilidade social,
+      ou
+      seja,
+      com dificuldades para conseguir o próprio sustento e acesso a uma alimentação de qualidade.
+    </div>
+
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Responsável</th>
+          <th scope="col">Quantidade de Membros</th>
+          <th scope="col">Apadrinhado?</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngIf="ownedGrantees.length === 0">
+          <td class="p-0" colspan="5">
+            <div class="m-0 alert alert-warning text-center py-5">
+              <p class="lead">
+                Você ainda não possui nenhum donatário registrado.
+                Cadastre seu primeiro donatário!
+              </p>
+              <button type="button" class="btn btn-lg btn-success">
+                Cadastrar Donatário
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr *ngFor="let grantee of ownedGrantees">
+          <th scope="row">{{grantee.id}}</th>
+          <td>{{grantee.responsiblePerson.firstName}} {{grantee.responsiblePerson.lastName}}</td>
+          <td>{{grantee.granteeMembersAmount}}</td>
+          <td>{{grantee.ownerInstitutionId ? "Sim" : "Não"}}</td>
+          <td>
+            <button (click)="isEditing=true" [routerLink]="['grantee', grantee.id]" type="button" class="btn btn-sm btn-primary mx-1">
+              editar
             </button>
-          </div>
-        </td>
-      </tr>
-
-      <tr *ngFor="let grantee of ownedGrantees">
-        <th scope="row">{{grantee.id}}</th>
-        <td>{{grantee.responsiblePerson.firstName}} {{grantee.responsiblePerson.lastName}}</td>
-        <td>{{grantee.granteeMembers?.length || 0}}</td>
-        <td>{{grantee.ownerInstitutionId ? "Sim" : "Não"}}</td>
-        <td>
-          <button [routerLink]="['grantee', grantee.id]" type="button" class="btn btn-sm btn-primary mx-1">
-            editar
-          </button>
-          <button type="button" class="btn btn-sm btn-danger">
-            remover
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+            <button type="button" class="btn btn-sm btn-danger">
+              remover
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <router-outlet></router-outlet>
 

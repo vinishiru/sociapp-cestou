@@ -12,7 +12,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PageHeaderComponent } from './components/page-header/page-header.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { SideNavMenuItemComponent } from './components/side-nav-menu-item/side-nav-menu-item.component';
-import { FormUserInfoComponent } from './components/form-user-info/form-user-info.component';
+import { FormPersonInfoComponent } from './components/form-person-info/form-person-info.component';
 import { FormAddressComponent } from './components/form-address/form-address.component';
 import { FormPasswordComponent } from './components/form-password/form-password.component';
 import { ControlPanelComponent } from './control-panel.component';
@@ -30,7 +30,7 @@ import { FormGranteeComponent } from './components/form-grantee/form-grantee.com
     UserHomeComponent,
     ProfileComponent,
     PageHeaderComponent,
-    FormUserInfoComponent,
+    FormPersonInfoComponent,
     FormAddressComponent,
     FormPasswordComponent,
     GranteesComponent,

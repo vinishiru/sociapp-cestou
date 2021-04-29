@@ -1,5 +1,7 @@
 <div class="card">
-    <h5 class="card-header">Dados de Endereço</h5>
+    <h5 class="card-header">{{title}}
+        <small *ngIf="subtitle" class="text-muted">{{subtitle}}</small>
+    </h5>
     <div class="card-body">
         <!-- <p class="card-text">Atualize seus dados pessoais.</p> -->
         <form>
@@ -7,7 +9,7 @@
                 <div class="form-group col-md-3">
                     <label for="zipCode">CEP</label>
                     <input type="number" class="form-control" id="zipCode">
-                    <small id="zipCode" class="form-text text-muted">Informe seu CEP.</small>
+                    <!-- <small id="zipCode" class="form-text text-muted">Informe seu CEP.</small> -->
                 </div>
             </div>
 

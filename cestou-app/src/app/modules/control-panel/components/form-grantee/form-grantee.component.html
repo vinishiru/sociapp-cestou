@@ -1,28 +1,12 @@
-<div class="card">
-    <h5 class="card-header">Dados Pessoais</h5>
-    <div class="card-body">
-  
-      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="firstName">Nome</label>
-            <input formControlName="firstName" type="text" class="form-control" id="firstName">
-          </div>
-          <div class="form-group col-md-6">
-            <label for="lastName">Sobrenome</label>
-            <input formControlName="lastName" type="text" class="form-control" id="lastName">
-          </div>
-        </div>
-  
-        <div class="form-group">
-          <label for="email">E-mail</label>
-          <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted">Não compartilharemos seu e-mail com ninguém.</small>
-        </div>
-  
-        <button type="submit" class="btn btn-success">Salvar Dados</button>
-  
-      </form>
-    </div>
-  
-  </div>
+<div @routeAnimation>
+
+  <p class="lead">
+    Cadastre ou atualize as informações do donatário.
+  </p>
+
+  <form-person-info title="Membro Responsável" subtitle="Pessoal ou membro da família responsável."
+    [userInfo]="grantee!.responsiblePerson"></form-person-info>
+
+  <form-address subtitle="Este é o endereço utilizado para a entrega da cesta básica."></form-address>
+
+</div>
