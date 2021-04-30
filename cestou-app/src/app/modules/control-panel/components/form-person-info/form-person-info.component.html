@@ -9,11 +9,11 @@
       <div class="form-row">
         <div class="form-group col-md-6">
           <label for="ssn">CPF</label>
-          <input formControlName="ssn" type="text" class="form-control required" id="ssn">
+          <input formControlName="ssn" type="text" class="form-control required" id="ssn" mask="000.000.000-00">
         </div>
         <div class="form-group col-md-6">
           <label for="birthDate">Data de Nascimento</label>
-          <input formControlName="birthDate" type="date" class="form-control required" id="birthDate" placeholder="">
+          <input formControlName="birthDate" type="text" class="form-control required" id="birthDate" mask="00/00/0000">
         </div>
       </div>
 
@@ -36,7 +36,7 @@
         </div>
         <div class="form-group col-md-6">
           <label for="phoneNumber">Telefone</label>
-          <input formControlName="phoneNumber" type="text" class="form-control" id="phoneNumber">
+          <input formControlName="phoneNumber" type="text" class="form-control" id="phoneNumber" mask="(00) 00000-0000">
         </div>
       </div>
 

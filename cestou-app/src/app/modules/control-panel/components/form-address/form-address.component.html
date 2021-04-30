@@ -1,47 +1,47 @@
-<div class="card">
+    <div class="card">
     <h5 class="card-header">{{title}}
         <small *ngIf="subtitle" class="text-muted">{{subtitle}}</small>
     </h5>
     <div class="card-body">
-        <!-- <p class="card-text">Atualize seus dados pessoais.</p> -->
-        <form>
+        
+        <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="zipCode">CEP</label>
-                    <input type="number" class="form-control" id="zipCode">
-                    <!-- <small id="zipCode" class="form-text text-muted">Informe seu CEP.</small> -->
+                    <input formControlName="zipCode" type="text" class="form-control required" id="zipCode" mask="00000-000">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="address">Endereço</label>
-                    <input type="text" class="form-control" id="address">
+                    <input formControlName="address" type="text" class="form-control required" id="address">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="district">Bairro</label>
-                    <input type="text" class="form-control" id="district">
+                    <input formControlName="district" type="text" class="form-control required" id="district">
                 </div>
                 <div class="form-group col-md-3">
                     <label for="complement">Complemento</label>
-                    <input type="text" class="form-control" id="complement">
+                    <input formControlName="complement" type="text" class="form-control" id="complement">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="city">Cidade</label>
-                    <input type="text" class="form-control" id="city">
+                    <input formControlName="city" type="text" class="form-control required" id="city">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="state">Estado</label>
-                    <select id="state" class="form-control">
+                    <select formControlName="state" id="state" class="form-control required">
                         <option selected>Escolha...</option>
                         <option>...</option>
                     </select>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary">Salvar Endereço</button>
+
+            <button type="submit" class="btn btn-primary">Salvar Endereço</button>
         </form>
 
     </div>

@@ -29,7 +29,7 @@ export class FormPersonInfoComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.userInfo)
-      this.personForm.setValue(this.userInfo);
+      this.personForm.patchValue(this.userInfo);
   }
 
   onSubmit(): void {
@@ -37,7 +37,5 @@ export class FormPersonInfoComponent implements OnInit {
     if (this.userInfoSaved)
       this.userInfoSaved.emit(this.personForm.value);
   }
-
-  get firstName() { return this.personForm.get('firstName'); }
 
 }

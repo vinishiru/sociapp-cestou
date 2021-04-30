@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { ControlPanelRoutingModule } from './control-panel-routing.module';
 
 //pages
@@ -17,10 +16,10 @@ import { FormAddressComponent } from './components/form-address/form-address.com
 import { FormPasswordComponent } from './components/form-password/form-password.component';
 import { ControlPanelComponent } from './control-panel.component';
 
-import { NgBootstrapFormValidationModule, CUSTOM_ERROR_MESSAGES } from 'ng-bootstrap-form-validation';
-import { CUSTOM_ERRORS } from 'src/app/custom-errors';
+import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 import { GranteesComponent } from './pages/grantees/grantees.component';
 import { FormGranteeComponent } from './components/form-grantee/form-grantee.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -40,15 +39,10 @@ import { FormGranteeComponent } from './components/form-grantee/form-grantee.com
     CommonModule,
     ControlPanelRoutingModule,
     ReactiveFormsModule,
-    NgBootstrapFormValidationModule.forRoot(),
-    NgBootstrapFormValidationModule
+    NgBootstrapFormValidationModule,
+    NgxMaskModule.forRoot()
+
   ],
-  providers: [
-    {
-      provide: CUSTOM_ERROR_MESSAGES,
-      useValue: CUSTOM_ERRORS,
-      multi: true
-    }
-  ]
+  providers: []
 })
 export class ControlPanelModule { }
