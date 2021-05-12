@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { Address } from 'src/app/interfaces/address';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'form-address',
@@ -11,26 +10,24 @@ export class FormAddressComponent implements OnInit {
 
   @Input() title: string = 'Dados de Endereço';
   @Input() subtitle: string = '';
-  @Input() addressInfo?: Address;
 
-  addressForm = this.fb.group({
-    zipCode: ['', Validators.required],
-    address: ['', Validators.required],
-    district: ['', Validators.required],
-    complement: [''],
-    city: ['', Validators.required],
-    state: ['', Validators.required]
-  });
+  addressFormGroup!: FormGroup;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    if (this.addressInfo)
-      this.addressForm.patchValue(this.addressInfo);
   }
 
-  onSubmit(): void {
-
+  createGroup(): FormGroup {
+    this.addressFormGroup = this.fb.group({
+      zipCode: ['', Validators.required],
+      address: ['', Validators.required],
+      district: ['', Validators.required],
+      complement: [''],
+      city: ['', Validators.required],
+      state: ['', Validators.required]
+    });
+    return this.addressFormGroup;
   }
 
 }

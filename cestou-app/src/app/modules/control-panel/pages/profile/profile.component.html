@@ -3,14 +3,18 @@
 <div @routeAnimation class="container">
   <div class="row">
 
-    <form-person-info title="Dados Pessoais" [userInfo]="currentUser" (userInfoSaved)="onUserInfoSaved($event)"
-      class="col-12 mb-2">
-    </form-person-info>
+    <div class="col-12">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <form-person-info title="Dados Pessoais">
+        </form-person-info>
 
-    <form-address [addressInfo]="currentUser!.address" class="col-12 mb-2"></form-address>
+        <form-address class="col-12 mb-2"></form-address>
 
-    <form-password class="col-12 mb-2"></form-password>
+        <form-password></form-password>
 
+        <button type="submit" class="btn btn-primary">Salvar Dados</button>
 
+      </form>
+    </div>
   </div>
 </div>

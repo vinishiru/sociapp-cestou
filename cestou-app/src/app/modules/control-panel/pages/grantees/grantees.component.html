@@ -33,7 +33,7 @@
                 Você ainda não possui nenhum donatário registrado.
                 Cadastre seu primeiro donatário!
               </p>
-              <button type="button" class="btn btn-lg btn-success">
+              <button (click)="isEditing=true" [routerLink]="'grantee'" type="button" class="btn btn-lg btn-success">
                 Cadastrar Donatário
               </button>
             </div>
@@ -46,7 +46,8 @@
           <td>{{grantee.granteeMembersAmount}}</td>
           <td>{{grantee.ownerInstitutionId ? "Sim" : "Não"}}</td>
           <td>
-            <button (click)="isEditing=true" [routerLink]="['grantee', grantee.id]" type="button" class="btn btn-sm btn-primary mx-1">
+            <button (click)="isEditing=true" [routerLink]="['grantee', grantee.id]" type="button"
+              class="btn btn-sm btn-primary mx-1">
               editar
             </button>
             <button type="button" class="btn btn-sm btn-danger">
@@ -56,19 +57,20 @@
         </tr>
       </tbody>
     </table>
+
+    <div *ngIf="ownedGrantees.length !== 0">
+      <div class="dropdown-divider"></div>
+
+      <div class="d-flex align-items-end justify-content-end">
+        <button class="btn btn-success shadow-sm">
+          <span class="bi-person-plus-fill"></span>
+          adicionar
+        </button>
+      </div>
+    </div>
+
   </div>
 
   <router-outlet></router-outlet>
-
-  <div *ngIf="ownedGrantees.length !== 0">
-    <div class="dropdown-divider"></div>
-
-    <div class="d-flex align-items-end justify-content-end">
-      <button class="btn btn-success shadow-sm">
-        <span class="bi-person-plus-fill"></span>
-        adicionar
-      </button>
-    </div>
-  </div>
 
 </div>

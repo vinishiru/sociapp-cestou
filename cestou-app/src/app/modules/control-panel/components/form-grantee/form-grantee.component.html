@@ -4,9 +4,14 @@
     Cadastre ou atualize as informações do donatário.
   </p>
 
-  <form-person-info title="Membro Responsável" subtitle="Pessoal ou membro da família responsável."
-    [userInfo]="grantee!.responsiblePerson"></form-person-info>
+  <form [formGroup]="granteeFormGroup">
+    
+    <form-person-info title="Membro Responsável" subtitle="Pessoal ou membro da família responsável.">
+    </form-person-info>
 
-  <form-address subtitle="Este é o endereço utilizado para a entrega da cesta básica."></form-address>
+    <form-address subtitle="Este é o endereço utilizado para a entrega da cesta básica.">
+    </form-address>
+
+  </form>
 
 </div>

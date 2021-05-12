@@ -1,3 +1,4 @@
+import { Address } from "./address";
 import { Person } from "./person";
 
 
@@ -7,6 +8,7 @@ export interface Grantee {
     ownerInstitutionId?: number,
 
     responsiblePerson: Person,
+    address: Address,
     creationDate: Date,
     granteeMembersAmount?: number
 }

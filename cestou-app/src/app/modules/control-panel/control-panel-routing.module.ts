@@ -17,7 +17,9 @@ const controlPanelRoutes: Routes = [
       {
         path: 'grantees', component: GranteesComponent, data: { animation: 'Default' },
         children: [
-          { path: 'grantee/:id', component: FormGranteeComponent, data: { animation: 'Default' } }
+          { path: 'grantee/:id', component: FormGranteeComponent, data: { animation: 'Default' } },
+          { path: 'grantee', component: FormGranteeComponent, data: { animation: 'Default' } }
+
         ]
       }
     ]

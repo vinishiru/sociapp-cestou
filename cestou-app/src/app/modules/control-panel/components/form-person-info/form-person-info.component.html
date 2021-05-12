@@ -4,7 +4,7 @@
   </h5>
   <div class="card-body">
 
-    <form [formGroup]="personForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="personFormGroup">
 
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -39,8 +39,6 @@
           <input formControlName="phoneNumber" type="text" class="form-control" id="phoneNumber" mask="(00) 00000-0000">
         </div>
       </div>
-
-      <button type="submit" class="btn btn-success">Salvar Dados</button>
     </form>
 
   </div>

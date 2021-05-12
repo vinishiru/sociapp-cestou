@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Person } from 'src/app/interfaces/person';
 import { AppToastService } from 'src/app/services/app-toast.service';
 import { UserService } from 'src/app/services/user.service';
 import { defaultRouteAnimation } from 'src/app/shared/animations';
+import { FormAddressComponent } from '../../components/form-address/form-address.component';
+import { FormPersonInfoComponent } from '../../components/form-person-info/form-person-info.component';
 
 @Component({
   selector: 'profile',
@@ -12,16 +15,43 @@ import { defaultRouteAnimation } from 'src/app/shared/animations';
 })
 export class ProfileComponent implements OnInit {
 
+  @ViewChild(FormPersonInfoComponent, { static: true }) personFormGroup?: FormPersonInfoComponent;
+  @ViewChild(FormAddressComponent, { static: true }) addressFormGroup?: FormAddressComponent;
+
+
+  profileForm!: FormGroup;
   currentUser?: Person;
 
-  constructor(private userService: UserService, private toastService: AppToastService) { }
+
+  constructor(
+    private fb: FormBuilder,
+    private userService: UserService,
+    private toastService: AppToastService
+  ) { }
 
   ngOnInit(): void {
+
+    this.profileForm = this.fb.group({
+      personInfo: this.personFormGroup!.createGroup(),
+      address: this.addressFormGroup!.createGroup()
+    });
+
     this.currentUser = this.userService.getUserInfo();
+
+    if (!this.currentUser)
+      return;
+
+    let profileInfo = {
+      personInfo: this.currentUser,
+      address: this.currentUser.address
+    };
+
+    this.profileForm.patchValue(profileInfo);
+
   }
 
-  onUserInfoSaved(person: Person): void {
-    this.userService.saveUserInfo(person);
+  onSubmit(): void {
+    this.userService.saveUserInfo(this.profileForm.value);
     this.toastService.showStandard('Sucesso', 'Dados salvos com sucesso.');
   }
 

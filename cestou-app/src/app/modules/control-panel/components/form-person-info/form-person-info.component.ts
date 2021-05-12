@@ -1,6 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Person } from 'src/app/interfaces/person';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'form-person-info',
@@ -11,31 +10,25 @@ export class FormPersonInfoComponent implements OnInit {
 
   @Input() title: string = '';
   @Input() subtitle: string = '';
-  @Input() userInfo?: Person;
 
-  @Output() userInfoSaved = new EventEmitter<Person>();
+  personFormGroup!: FormGroup;
 
-  personForm = new FormGroup({
-    ssn: new FormControl('', Validators.required),
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
-    birthDate: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.email]),
-    phoneNumber: new FormControl('')
-  });
+  constructor(private fb: FormBuilder) {
+  }
 
-  constructor() {
+  createGroup(): FormGroup {
+    this.personFormGroup = this.fb.group({
+      ssn: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      birthDate: ['', Validators.required],
+      email: ['', Validators.email],
+      phoneNumber: ['']
+    });
+    return this.personFormGroup;
   }
 
   ngOnInit(): void {
-    if (this.userInfo)
-      this.personForm.patchValue(this.userInfo);
-  }
-
-  onSubmit(): void {
-
-    if (this.userInfoSaved)
-      this.userInfoSaved.emit(this.personForm.value);
   }
 
 }

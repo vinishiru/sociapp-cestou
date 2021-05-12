@@ -18,7 +18,14 @@ export class GranteeService {
         lastName: "Da Silva",
         email: "joaosilva@gmail.com",
         birthDate: new Date(1988, 10, 23),
-        phoneNumber: "031999999999"
+        phoneNumber: "031999999999",
+      },
+      address: {
+        address: 'Rua Dalvo Trombeta',
+        city: 'Birigui',
+        district: 'Gonhonha',
+        state: 'MG',
+        zipCode: '12-345678'
       }
     }
   ];

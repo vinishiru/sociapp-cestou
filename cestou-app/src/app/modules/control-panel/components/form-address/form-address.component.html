@@ -1,14 +1,16 @@
-    <div class="card">
+<div class="card">
     <h5 class="card-header">{{title}}
         <small *ngIf="subtitle" class="text-muted">{{subtitle}}</small>
     </h5>
     <div class="card-body">
-        
-        <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+
+        <form [formGroup]="addressFormGroup">
+
             <div class="form-row">
                 <div class="form-group col-md-3">
                     <label for="zipCode">CEP</label>
-                    <input formControlName="zipCode" type="text" class="form-control required" id="zipCode" mask="00000-000">
+                    <input formControlName="zipCode" type="text" class="form-control required" id="zipCode"
+                        mask="00000-000">
                 </div>
             </div>
 
@@ -41,7 +43,6 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Salvar Endereço</button>
         </form>
 
     </div>
