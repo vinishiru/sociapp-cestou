@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-O objetivo do Cestou é tornar-se uma aplicação de contribuição social relevante, atuando como plataforma para doações a serem convertidas em cestas básicas a serem distribuídas, através de instituições cadastradas, com foco na ajuda para famílias em situação de vulnerabilidade social.
+O objetivo do Cestou é tornar-se uma aplicação de contribuição social relevante, atuando como plataforma para doações que são convertidas em cestas básicas a serem distribuídas, através de instituições cadastradas, com foco na ajuda para famílias em situação de vulnerabilidade social.
 
 ## Como funcionar(á)?
 
