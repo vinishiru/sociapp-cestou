@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BrazilStates } from 'src/app/services/location.service';
 
 @Component({
   selector: 'form-address',
@@ -12,6 +13,8 @@ export class FormAddressComponent implements OnInit {
   @Input() subtitle: string = '';
 
   addressFormGroup!: FormGroup;
+
+  states = BrazilStates;
 
   constructor(private fb: FormBuilder) { }
 

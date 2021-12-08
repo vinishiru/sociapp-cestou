@@ -11,7 +11,7 @@ export class UserService {
     firstName: 'Joazinho',
     lastName: 'da Silva ',
     email: 'joazinho.silva@gmail.com',
-    birthDate: new Date('23/10/1988'),
+    birthDate: new Date('10/23/1988'),
     ssn: 12345678902,
     phoneNumber: "31999999999",
     address: {

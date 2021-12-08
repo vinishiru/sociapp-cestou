@@ -51,7 +51,11 @@ export class ProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.userService.saveUserInfo(this.profileForm.value);
+    let person: Person = {
+      ...this.profileForm.value.personInfo,
+      address: this.profileForm.value.address
+    };
+    this.userService.saveUserInfo(person);
     this.toastService.showStandard('Sucesso', 'Dados salvos com sucesso.');
   }
 
