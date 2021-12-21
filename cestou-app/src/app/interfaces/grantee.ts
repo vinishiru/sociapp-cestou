@@ -10,5 +10,5 @@ export interface Grantee {
     responsiblePerson: Person,
     address: Address,
     creationDate: Date,
-    granteeMembersAmount?: number
+    familyMembersAmount?: number
 }

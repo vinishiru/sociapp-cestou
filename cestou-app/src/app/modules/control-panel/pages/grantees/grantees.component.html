@@ -19,7 +19,7 @@
         <tr>
           <th scope="col">#</th>
           <th scope="col">Responsável</th>
-          <th scope="col">Quantidade de Membros</th>
+          <th scope="col">Membros da Família</th>
           <th scope="col">Apadrinhado?</th>
           <th scope="col">Ações</th>
         </tr>
@@ -43,7 +43,7 @@
         <tr *ngFor="let grantee of ownedGrantees">
           <th scope="row">{{grantee.id}}</th>
           <td>{{grantee.responsiblePerson.firstName}} {{grantee.responsiblePerson.lastName}}</td>
-          <td>{{grantee.granteeMembersAmount}}</td>
+          <td>{{grantee.familyMembersAmount}}</td>
           <td>{{grantee.ownerInstitutionId ? "Sim" : "Não"}}</td>
           <td>
             <button (click)="isEditing=true" [routerLink]="['grantee', grantee.id]" type="button"

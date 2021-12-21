@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Grantee } from '../interfaces/grantee';
-import { Person } from '../interfaces/person';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +10,8 @@ export class GranteeService {
     {
       id: 1,
       ownerId: 1,
+      familyMembersAmount: 3,
+      ownerInstitutionId: 1,
       creationDate: new Date("2021/04/24"),
       responsiblePerson: {
         ssn: 12345678902,
@@ -27,12 +28,33 @@ export class GranteeService {
         state: 'MG',
         zipCode: '12-345678'
       }
-    }
+    },
+    {
+      id: 2,
+      ownerId: 1,
+      familyMembersAmount: 2,
+      creationDate: new Date("2021/04/24"),
+      responsiblePerson: {
+        ssn: 12345678902,
+        firstName: "Maria",
+        lastName: "Da Silva",
+        email: "mariasilva@gmail.com",
+        birthDate: new Date(1988, 10, 23),
+        phoneNumber: "031999999999",
+      },
+      address: {
+        address: 'Rua Dalvo Trombeta',
+        city: 'Birigui',
+        district: 'Gonhonha',
+        state: 'MG',
+        zipCode: '12-345678'
+      }
+    },
   ];
 
   constructor() { }
 
-  getGrantee(granteeId: number) {
+  getGrantee(granteeId: number) : Grantee | undefined {
     return this.grantees.find(m => m.id === granteeId);
   }
 
